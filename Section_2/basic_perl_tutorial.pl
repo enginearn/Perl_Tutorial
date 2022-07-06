@@ -93,7 +93,8 @@ my @file = "basic_perl_tutorial.pl";
 my $message = qq("@file" found!);
 print($message,"\n");
 
-# my $m = qw{aaa bbb ccc ddd};
+my @m = qw(aaa bbb ccc ddd);
+print("@m\n");
 
 $s = "This is a single string line!\n";
 print(length($s),"\n");
@@ -130,3 +131,44 @@ print(reverse 'abc'); # "cba"
 print(rindex('abcdefg', 'g'), "\n"); # position: "6"
 my $digits_7 = sprintf("%07d", 123); # "0000123"
 print($digits_7, "\n");
+
+print(10 + 10, "\n"); # 20
+print(20 - 10, "\n"); # 10
+print(10 * 20, "\n"); # 200
+print(20 / 10, "\n"); # 2
+print(10 + 20 / 2 - 5 * 2, "\n"); # 10
+print(((10 + 20) / 2 - 5) * 2, "\n"); # 20
+print(2 ** 3, "\n"); # 8
+print(3 ** 4, "\n"); # 81
+print(4 % 2, "\n"); # 0
+print(5 % 2, "\n"); # 1
+
+$a = 0b0101; # binary 5
+$b = 0b0011; # binary 3
+$c = $a + $b; # binary 8
+print($c, "\n");
+$c = $a & $b; # binary 1
+print($c, "\n");
+$c = $a | $b; # binary 7
+print($c, "\n");
+$c = $a ^ $b; # binary 6
+print($c, "\n");
+$c = ~$a; # binary -6
+print($c, "\n");
+$c = $a >> 2; # binary 20
+print($c, "\n");
+$c = $a << 2; # binary 40
+
+$a = 10;
+$b = 20;
+
+print($a <=> $b, "\n"); # -1
+print($b <=> $a, "\n"); # 1
+print($a <=> $a, "\n"); # 0
+print($b <=> $b, "\n"); # 0
+
+print("This is" . " concatenation" . " of strings.\n");
+print("a message" x 4, "\n");
+
+chomp($s = <STDIN>); # The <STDIN> is used to get input from users.
+print($s);
