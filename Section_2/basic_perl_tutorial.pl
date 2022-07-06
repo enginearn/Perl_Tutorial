@@ -77,18 +77,56 @@ my $s1 = "string with doubled-quotes";
 my $s2 = 'string with single quote';
 print("s1 = $s1\n");
 print('s2 = $s2\n');
-print("\n");
+print("\n"); # no collon after print, the shyntax error had orrured near line 98...
 
 $s = q/"Are you learning Perl String today?" We asked./;
 print($s ,"\n");
 
 my $name = 'Jack';
 $s2 = qq/"Are you learning Perl String today?" $name asked./;
-print($s2 ,"\n")
+print($s2 ,"\n");
 
-# my $s = q^A string with different delimiter ^;
-# print($s,"\n");
+$s = q^A string with different delimiter ^;
+print($s,"\n");
 
-my @file = "1basic_perl_tutorial.pl";
-my $message = qq(Not found "@file");
+my @file = "basic_perl_tutorial.pl";
+my $message = qq("@file" found!);
 print($message,"\n");
+
+# my $m = qw{aaa bbb ccc ddd};
+
+$s = "This is a single string line!\n";
+print(length($s),"\n");
+
+my $upper = "This is upper case string.\n";
+print(uc($upper),"\n");
+
+my $lower = "THIS IS LOWER CASE STRING.\n";
+print(lc($lower),"\n");
+
+$s = "Learning Perl easy but feeling strange!";
+my $sub = "Perl";
+my $p = index($s, $sub); # rindex($s, $sub);
+print(qq/The substring "$sub" found at position "$p" in string: "$s"/,"\n");
+
+$s = "Green is my favorite color";
+$color = substr($s, 0, 5); # substr($s, $start, $length);
+my $end = substr($s, -5);
+print($end, ": ", $color, "\n");
+
+substr($s, 0, 5, "Red");
+print($s,"\n");
+
+$c = chr(54);
+print(qq/ASCII or UNICODE: "$c"/, "\n");
+# ASCII or UNICODE: "6"
+
+print(hex '0xAf', "\n"); # ASCII or UNICODE: "175"
+print(oct '0377', "\n"); # ASCII or UNICODE: "255"
+print(ord 'A', "\n"); # ASCII or UNICODE: "65"
+print q/single-quoted/, "\n";
+print qq/Double-quotes/, "\n";
+print(reverse 'abc'); # "cba"
+print(rindex('abcdefg', 'g'), "\n"); # position: "6"
+my $digits_7 = sprintf("%07d", 123); # "0000123"
+print($digits_7, "\n");
